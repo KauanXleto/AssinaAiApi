@@ -23,10 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AssinaAi.BusinessEntities\AssinaAi.BusinessEntities.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="OCR\Img\tessdata\eng.traineddata">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

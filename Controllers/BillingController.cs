@@ -1,4 +1,4 @@
-﻿using AssinaAi.BusinessEntities;
+﻿using AssinaAiApi.Entities;
 using AssinaAiApi.Models;
 using Microsoft.EntityFrameworkCore;
 
