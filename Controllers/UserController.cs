@@ -21,32 +21,40 @@ namespace AssinaAiApi.Controllers
     public static class UserController
     {
         private static WebApplication currentContext;
+
+        [EndpointDescription("EndPoins do usuário")]
         public static void ConfigureUserApi(this WebApplication app)
         {
             currentContext = app;
 
             app.MapPost("Add/User", AddUser)
             .WithName("AddUser")
+            .WithDescription("Cadastro de usuário")
             .WithOpenApi();
 
             app.MapGet("/User", GetUser)
             .WithName("GetUser")
+            .WithDescription("Consultar usuários")
             .WithOpenApi();
 
             app.MapGet("/User/{id}", GetUserById)
             .WithName("GetUserById")
+            .WithDescription("Consultar usuários pelo Id")
             .WithOpenApi();
 
             app.MapPost("/User/{id}", UpdateUser)
             .WithName("UpdateUser")
+            .WithDescription("Atualizar usuário")
             .WithOpenApi();
 
             app.MapDelete("/User/{id}", DeleteUser)
             .WithName("DeleteUser")
+            .WithDescription("Deletar usuários")
             .WithOpenApi();
 
             app.MapPost("/LogOn", LogOn)
             .WithName("LogOn")
+            .WithDescription("Logar no sistema")
             .WithOpenApi();
         }
 

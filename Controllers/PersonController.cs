@@ -11,26 +11,32 @@ namespace AssinaAiApi.Controllers
 {
     public static class PersonController
     {
+        [EndpointDescription("EndPoins da Pessoa")]
         public static void ConfigurePersonApi(this WebApplication app)
         {
             app.MapPost("Add/Person", AddPerson)
             .WithName("AddPerson")
+            .WithDescription("Adicionar Pessoas")
             .WithOpenApi();
 
             app.MapGet("/Person", GetPerson)
             .WithName("GetPerson")
+            .WithDescription("Consultar pessoas")
             .WithOpenApi();
 
             app.MapGet("/Person/{id}", GetPersonById)
             .WithName("GetPersonById")
+            .WithDescription("Consultar pessoas pelo Id")
             .WithOpenApi();
 
             app.MapPost("/Person/{id}", UpdatePerson)
             .WithName("UpdatePerson")
+            .WithDescription("Atualizar pessoas")
             .WithOpenApi();
 
             app.MapDelete("/Person/{id}", DeletePerson)
             .WithName("DeletePerson")
+            .WithDescription("Deletar pessoas")
             .WithOpenApi();
         }
 

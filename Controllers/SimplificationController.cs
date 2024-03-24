@@ -26,24 +26,29 @@ namespace AssinaAiApi.Controllers
     {
         private static WebApplication currentContext;
 
+        [EndpointDescription("EndPoins da Simplificação")]
         public static void ConfigureSimplificationApi(this WebApplication app)
         {
             currentContext = app;
 
             app.MapPost("Add/Simplification", AddSimplification)
             .WithName("AddSimplification")
+            .WithDescription("Upload do documento - Deve ser enviado um form-data com o arquivo via Post")
             .WithOpenApi();
 
             app.MapGet("/Simplification", GetSimplification)
             .WithName("GetSimplification")
+            .WithDescription("Consultar simplificação")
             .WithOpenApi();
 
             app.MapGet("/Simplification/{id}", GetSimplificationById)
             .WithName("GetSimplificationById")
+            .WithDescription("Consultar simplificação pelo Id")
             .WithOpenApi();
 
             app.MapDelete("/Simplification/{id}", DeleteSimplification)
             .WithName("DeleteSimplification")
+            .WithDescription("Deletar simplificação")
             .WithOpenApi();
         }
 
